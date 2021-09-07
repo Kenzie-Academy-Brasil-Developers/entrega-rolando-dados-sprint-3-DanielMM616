@@ -25,13 +25,16 @@ function contagem() {
 
 function lancar() {
     contagem()
-    let total = []
-    let parag = document.createElement('p')
-    for (let x = 2; x < count.length; x++){
-        console.log(x + ': ' + count[x])
-        total.push(' ' + x + ': ' + count[x])
-    }
     const resp = document.getElementById('resp')
+
+    for (let x = 2; x < count.length; x++) {
+        const span = document.createElement('span');
+        span.style.padding = '10px'
+        span.style.border = '1px solid white'
+        const textContent = `${x}: ${count[x]} `;
+        span.innerText = textContent;
+        resp.appendChild(span);
+    }
 
     resp.innerText = total
 }
